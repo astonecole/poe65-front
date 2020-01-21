@@ -1,0 +1,30 @@
+body {
+    font-family: sans-serif;
+}
+
+.container {
+    width: 800px;
+    height: 400px;
+    background-color: #a8a8a8;
+    margin: 0 auto;
+    display: flex;
+
+    /* Flex Direction: axe principale */
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+}
+
+.box {
+    width: 80px;
+    /* height: 80px; */
+    background-color: springgreen;
+    color: seagreen;
+    border: 1px solid seagreen;
+    text-align: center;
+    line-height: 80px;
+}
+
+.box2 {
+    align-self: center;
+}

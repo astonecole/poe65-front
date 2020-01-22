@@ -1,0 +1,55 @@
+body {
+    font-family: Calibri;
+    font-size: 20px;
+}
+
+a {
+    color: #333;
+    text-decoration: none;
+}
+
+html, body, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.navbar {
+    background-color: seagreen;
+    color: white;
+    display: flex;
+}
+
+.navbar a {
+    display: block;
+    color: inherit;
+    padding: 14px 20px;
+}
+
+.navbar a:hover {
+    background-color: tomato;
+}
+
+.navbar-dropdown {
+    position: relative;
+}
+
+.navbar-dropdown > ul  {
+    background-color: seagreen;
+    position: absolute;
+    left: 0;
+    white-space: nowrap;
+    left: -9999px;
+    top: -9999px;
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+.navbar-dropdown:hover > ul {
+    opacity: 1;
+    left: 0;
+    top: initial;
+}

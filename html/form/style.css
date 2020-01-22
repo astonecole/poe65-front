@@ -1,0 +1,57 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: url('landscape.jpg');
+    font-family: Calibri;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form {
+    background-color: #fff;
+    padding: 16px;
+    width: 400px;
+    border-radius: 4px;
+    box-shadow: 0 0 100px #333;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-control {
+    padding: 10px;
+    border: 1px solid #CCC;
+    width: 100%;
+    border-radius: 4px;
+}
+
+.form-control:focus {
+    border-color: royalblue;
+}
+
+.btn {
+    padding: 5px 12px;
+    display: inline-block;
+    border-radius: 4px;
+    border: 1px solid #CCC;
+    font: inherit;
+    line-height: inherit;
+}
+
+.btn-primary {
+    background-color: royalblue;
+    color: white;
+}

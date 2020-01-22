@@ -41,4 +41,24 @@ body {
     .box2 {
         flex-grow: 1;
     }
+
+    .sticky-card {
+        position: sticky;
+        top: 10px;
+    }
+
+    .spaceship {
+        width: 60%;
+        position: sticky;
+        top: 20px;
+        margin-left: 50%;
+        transform: translateX(-50%);
+        animation: orbitFly cubic-bezier(.50,.01,0,1) 10s infinite;
+    }
+}
+
+@keyframes orbitFly {
+    50% {
+        transform: translateX(-50%) translateY(50%) scale(0.8) rotateY(70deg) skew(5deg);
+    }
 }

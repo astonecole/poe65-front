@@ -12,14 +12,19 @@ taskText.addEventListener('keyup', function (event) {
 
 tasks.addEventListener('click', function (event) {
     var elem = event.target;
+    var classes = elem.classList;
 
-    if (elem.classList.contains('remove')) {
+    if (classes.contains('remove')) {
         // tasks.removeChild(elem.parentNode);
         elem.parentNode.remove();
     }
 
-    if (elem.classList.contains('done')) {
-        elem.classList.toggle('toggle-done');
+    if (classes.contains('valid')) {
+        elem.previousSibling.classList.toggle('toggle-valid');
+    }
+
+    if (classes.contains('edit')) {
+        console.log('edit');
     }
 });
 
@@ -27,16 +32,24 @@ function createTaskNode(txt) {
     var text = document.createTextNode(txt + ' ');
     var li = document.createElement('li');
     var span = document.createElement('span');
-    var i = document.createElement('i');
+    var trash = document.createElement('i');
+    var valid = document.createElement('i');
 
-    i.classList.add('fa');
-    i.classList.add('fa-trash');
-    i.classList.add('remove');
+    valid.classList.add('fa');
+    valid.classList.add('fa-check-circle');
+    valid.classList.add('valid');
+
+    trash.classList.add('fa');
+    trash.classList.add('fa-trash');
+    trash.classList.add('remove');
     span.classList.add('done');
+
+    span.setAttribute('contenteditable', true)
 
     span.appendChild(text);
     li.appendChild(span);
-    li.appendChild(i);
+    li.appendChild(valid);
+    li.appendChild(trash);
 
     return li;
 }

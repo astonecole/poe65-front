@@ -15,7 +15,7 @@ h1 {
     margin: 0;
 }
 
-.toggle-done {
+.toggle-valid {
     text-decoration: line-through;
     color: #888;
 }
@@ -47,4 +47,21 @@ h1 {
     padding: 4px 0;
     display: flex;
     justify-content: space-between;
+    align-items: baseline;
+}
+
+.todo-tasks > li > span {
+    flex-grow: 1;
+    display: inline-block;
+    word-wrap: break-word;
+    outline: 0;
+}
+
+.todo-tasks > li > .valid {
+    padding-right: 5px;
+    cursor: pointer;
+}
+
+.todo-tasks > li > .remove {
+    cursor: pointer;
 }

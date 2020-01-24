@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Palindrome</title>
+    <style>
+        body { font-family: sans-serif; }
+        input { padding: 5px; border: 1px solid #CCC; border-radius: 3px; width: 20%; }
+    </style>
+</head>
+
+<body>
+    <h1>Est-ce un Palindrome ?</h1>
+
+    <div>
+        <label>Saisissez votre mot :</label>
+        <input type="text" placeholder="radar" id="inputText">
+        <p id="message"></p>
+    </div>
+
+
+    <script>
+        let inputText = document.querySelector('#inputText');
+        let message = document.querySelector('#message');
+
+        inputText.addEventListener('keyup', function (event) {
+            if (event.keyCode === 13) {
+                if (!isPalindrom(inputText.value)) {
+                    message.textContent = '"' + inputText.value + '" n\'est pas un palindrome.';
+                    return;
+                }
+                message.textContent = 'Bravo ! "' + inputText.value + '" est un palindrome.';
+            }
+        });
+
+        function isPalindrom(word) {
+            let len = word.length;
+            if (len === 0 || len === 1) {
+                return true;
+            }
+            if (word.slice(0, 1) !== word.slice(-1)) {
+                return false;
+            }
+            return isPalindrom(word.slice(1, -1));
+        }
+
+        let ok = isPalindrom('radar');
+    </script>
+
+</body>
+
+</html>

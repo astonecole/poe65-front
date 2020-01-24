@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Canvas</title>
+    <style>
+        canvas { background-color: #CCC; }
+    </style>
+</head>
+<body>
+
+    <canvas id="draw" width="300px" height="250px"></canvas>
+
+    <script>
+        let canvas = document.querySelector('#draw');
+        let ctx = canvas.getContext('2d');
+        let x = 0;
+        let direction = 1;
+
+        setInterval(function () {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.beginPath();
+            ctx.fillRect(x, 50, 80, 80);
+
+            x += direction;
+
+            if (x > canvas.width - 80) {
+                direction = -1;
+            } else if (x < 0) {
+                direction = 1;
+            }
+        }, 1000/24);
+
+    </script>
+    
+</body>
+</html>

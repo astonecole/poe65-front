@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Game Store</title>
+    <link href="https://fonts.googleapis.com/css?family=Titillium+Web:300,400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <nav class="menu container">
+            <a href="index.html">Accueil</a>
+            <a href="connexion.html">Connexion</a>
+            <a href="inscription.html">Inscription</a>
+        </nav>
+    </header>
+
+    <main class="content">
+        <div class="container">
+            <h1 id="page-title">GameStore</h1>
+
+            <article class="card card-blink" tabindex="1">
+                <img class="card-img" src="images/zelda-awakening.jpg" alt="Zelda">
+                <div class="card-body">
+                    <h2 class="card-title">Zelda the best in the world</h2>
+                    <div class="card-price">59.99€</div>
+                </div>
+            </article>
+
+            <article class="card card-blink" tabindex="2">
+                <img class="card-img" src="images/mario-odyssey.jpg" alt="Mario">
+                <div class="card-body">
+                    <h2 class="card-title">Mario Odyssey</h2>
+                    <div class="card-price">54.99€</div>
+                </div>
+            </article>
+
+            <article class="card card-blink" tabindex="3">
+                <img class="card-img" src="images/pokemon.jpg" alt="Pokemon">
+                <div class="card-body">
+                    <h2 class="card-title">Pokemon</h2>
+                    <div class="card-price">64.99€</div>
+                </div>
+            </article>
+
+            <article class="card card-blink" tabindex="4">
+                <img class="card-img" src="images/mario-kart.jpg" alt="Mario">
+                <div class="card-body">
+                    <h2 class="card-title">Mario Kart</h2>
+                    <div class="card-price">44.90€</div>
+                </div>
+            </article>
+
+            <article class="card card-blink" tabindex="5">
+                <img class="card-img" src="images/zelda.jpg" alt="Zelda">
+                <div class="card-body">
+                    <h2 class="card-title">Zelda</h2>
+                    <div class="card-price">50.90€</div>
+                </div>
+            </article>
+
+            <article class="card card-blink" tabindex="6">
+                <img class="card-img" src="images/megaman.jpg" alt="Megaman">
+                <div class="card-body">
+                    <h2 class="card-title">Megaman</h2>
+                    <div class="card-price">34.90€</div>
+                </div>
+            </article>
+
+            <article class="card card-blink" tabindex="6">
+                <img class="card-img" src="images/asterix.jpg" alt="Asterix">
+                <div class="card-body">
+                    <h2 class="card-title">Asterix</h2>
+                    <div class="card-price">39.90€</div>
+                </div>
+            </article>
+
+        </div>
+    </main>
+
+    <script>
+        // Un commentaire en ligne
+        // var name = prompt('Veuillez saisir votre nom');
+        // alert('Bonjour ' + name);
+
+
+        // Récupération de l'objet h1.
+        var pageTitle = document.getElementById('page-title');
+        pageTitle.style.cursor = 'pointer';
+
+        // On ajoute un écouteur d'évènement qui va écouter le
+        // click sur la balise h1.
+        pageTitle.addEventListener('click', changeTitle);
+
+        // Création de la fonction à exécuter quand l'utilisateur
+        // cliquera sur le titre.
+        // Toggle
+        var audio = new Audio('audio/sound.wav');
+
+        function changeTitle() {
+            if (pageTitle.textContent === 'GameStore') {
+                pageTitle.textContent = 'NintendoStore';
+                pageTitle.style.color = '#E91E63';
+                audio.play();
+            } else {
+                pageTitle.textContent = 'GameStore';
+                pageTitle.style.color = 'white';
+                audio.pause();
+            }
+        }
+
+        // Animation du scroll des cards
+
+        var cards = document.querySelectorAll('.card');
+
+        cards.forEach(function (card) {
+            card.addEventListener('focus', function () {
+                var rect = card.getBoundingClientRect();
+                // console.log(rect);
+
+                var y = rect.top - (rect.height + 60) + window.scrollY;
+
+                window.scroll({
+                    top: y,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+
+</body>
+
+</html>
